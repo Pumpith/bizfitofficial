@@ -1,0 +1,38 @@
+@mixin genClassIcon($type, $name) {
+	$path: "";
+	@if ($type == filled) {
+		$path: "../public/images/icons/filled/#{$name}.svg";
+		$name: $name + "_filled";
+	} @else {
+		$path: "../public/images/icons/outlined/#{$name}.svg";
+	}
+
+	@if ($type == special) {
+		$path: "../public/images/icons/special/#{$name}.png";
+		&.ic_#{$name} {
+			background-image: url($path);
+			background-color: transparent;
+		}
+	} @else {
+		&.ic_#{$name} {
+			-webkit-mask-image: url($path);
+			mask-image: url($path);
+		}
+	}
+}
+
+@mixin genGap($with, $type, $value) {
+	@if ($with == "gap" and $type == "row") {
+		row-gap: $value;
+	} @else if ($with == "gap" and $type == "column") {
+		column-gap: $value;
+	} @else if ($with == "margin" and $type == "row") {
+		& > *:not(:last-child) {
+			margin-bottom: $value;
+		}
+	} @else if ($with == "margin" and $type == "column") {
+		& > *:not(:last-child) {
+			margin-right: $value;
+		}
+	}
+}

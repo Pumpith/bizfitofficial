@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
+
+/* ================= FONTS ================== */
+$Prompt: "Prompt";
+$IBMPlexSansThai-Looped-Bold: "IBMPlexSansThai-Looped-Bold";
+@font-face {
+	font-family: $IBMPlexSansThai-Looped-Bold;
+	src: url(../assets/fonts/IBMPlexSansThaiLooped-Bold.ttf)
+		format("truetype");
+}

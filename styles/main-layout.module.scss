@@ -1,0 +1,115 @@
+// Breakpoints Variable
+$screen-xs-max: 599px;
+$screen-sm-min: $screen-xs-max + 1px;
+$screen-sm-max: 1199px;
+$screen-lg-min: $screen-sm-max + 1px;
+
+.layout_main_container {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: $screen-xs-max) {
+        padding: 0 0.625rem;
+    }
+
+    @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        padding: 0 1rem;
+    }
+
+    @media screen and (min-width: $screen-lg-min) {
+        padding: 0 8.375rem;
+    }
+
+    >.navbar~.layout_body_container {
+        height: calc(100vh - 3.5rem);
+    }
+
+    >.PageHeaderSticky~.layout_body_container {
+        height: calc(100vh - 3.75rem);
+    }
+}
+
+.stretch_container {
+    @media screen and (max-width: $screen-xs-max) {
+        margin: 0 -0.625rem;
+    }
+
+    @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        margin: 0 -1rem;
+    }
+
+    @media screen and (min-width: $screen-lg-min) {
+        margin-left: -8.375rem;
+        margin-right: -8.375rem;
+    }
+}
+
+.layout_hero {
+    padding-top: 12.5rem;
+
+    @media screen and (max-width: $screen-xs-max) {
+        margin: 0 -0.625rem;
+        padding-left: 0.625rem;
+        padding-right: 0.625rem;
+    }
+
+    @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        margin: 0 -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    @media screen and (min-width: $screen-lg-min) {
+        padding-top: 18.5rem;
+        margin-left: -8.375rem;
+        margin-right: -8.375rem;
+        padding-left: 8.375rem;
+        padding-right: 8.375rem;
+    }
+}
+
+.layout_body_container {
+    height: 100vh;
+    display: grid;
+    row-gap: 2.5rem;
+    grid-template-columns: 100%;
+    align-content: space-between;
+}
+
+.layout_content_form_container {
+    padding: 0 1.5rem;
+}
+
+.layout_action_container {
+    padding: 0 1.5rem 3rem;
+    display: grid;
+    row-gap: 1.5rem;
+    grid-template-columns: 100%;
+}
+
+.sticky {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    bottom: 0;
+    margin-top: 0;
+    background: var(--color-surface-variant);
+    padding: 1.5rem 2.5rem;
+    max-height: 5.75rem;
+
+    @media screen and (max-width: $screen-xs-max) {
+        margin: 0 -1rem;
+    }
+
+    @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        margin: 0 -3.25rem;
+        padding: 1.5rem 4.75rem;
+    }
+
+    @media screen and (min-width: $screen-lg-min) {
+        margin: 0 -3rem;
+        padding: 1.5rem 4.5rem;
+    }
+
+    @extend .shadow_lv2_top;
+}
